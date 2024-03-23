@@ -1,9 +1,9 @@
 import { expect, describe, it, beforeEach, vi } from 'vitest'
 import { InMemoryCheckInsRepository } from '@/repositories/in-memory/in-memory-check-ins-repository'
-import { ValidadeCheckInUseCase } from './validate-check-in'
-import { ResourceNotFoundError } from './errors/resource-not-found-error'
+import { ValidadeCheckInUseCase } from '../../use-cases/validate-check-in'
+import { ResourceNotFoundError } from '../../use-cases/errors/resource-not-found-error'
 import { afterEach } from 'node:test'
-import { LateCheckInValidationError } from './errors/late-check-in-validation-error'
+import { LateCheckInValidationError } from '../../use-cases/errors/late-check-in-validation-error'
 
 // System Under Test
 let sut: ValidadeCheckInUseCase

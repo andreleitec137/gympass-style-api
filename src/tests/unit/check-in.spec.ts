@@ -1,9 +1,9 @@
 import { expect, describe, it, beforeEach, vi, afterEach } from 'vitest'
-import { CheckInUseCase } from './check-in'
+import { CheckInUseCase } from '../../use-cases/check-in'
 import { InMemoryCheckInsRepository } from '@/repositories/in-memory/in-memory-check-ins-repository'
 import { InMemoryGymsRepository } from '@/repositories/in-memory/in-memory-gyms-repository'
-import { MaxNumberOfCheckInsError } from './errors/max-number-of-check-ins-error'
-import { MaxDistanceError } from './errors/max-distance-error'
+import { MaxNumberOfCheckInsError } from '../../use-cases/errors/max-number-of-check-ins-error'
+import { MaxDistanceError } from '../../use-cases/errors/max-distance-error'
 
 // System Under Test
 let sut: CheckInUseCase
