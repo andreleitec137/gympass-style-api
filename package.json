@@ -4,7 +4,7 @@
   "description": "Gympass style app",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/server.ts",
+    "dev": "docker compose up -d   && tsx watch src/server.ts",
     "build": "tsup src --out-dir build",
     "start": "npm run build && node build/server.js",
     "prisma:migrate": "npx prisma migrate dev",
@@ -34,6 +34,7 @@
     "@prisma/client": "5.11.0",
     "@types/bcryptjs": "2.4.6",
     "bcryptjs": "2.4.3",
+    "dayjs": "1.11.10",
     "dotenv": "16.4.5",
     "fastify": "4.26.2",
     "zod": "3.22.4"
