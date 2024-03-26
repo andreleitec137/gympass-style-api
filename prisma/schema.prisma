@@ -13,6 +13,11 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Role {
+  ADMIN
+  MEMBER
+}
+
 // 1 '@' Configura a coluna
 // 2 '@' Configura a tabela
 model User {
@@ -20,6 +25,7 @@ model User {
   name          String
   email         String   @unique
   password_hash String
+  role          Role     @default(MEMBER)
   created_at    DateTime @default(now())
 
   checkIns CheckIn[]

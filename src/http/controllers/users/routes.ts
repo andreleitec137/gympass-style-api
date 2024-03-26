@@ -3,6 +3,7 @@ import { register } from './register'
 import { authenticate } from './authenticate'
 import { verifyJwt } from '@/http/middlewares/verify-jwt'
 import { profile } from './profile'
+import { refresh } from './refresh'
 
 /*
 Traduzir a rota sempre para entidades, oque isso quer dizer:
@@ -15,6 +16,7 @@ export async function usersRoutes(app: FastifyInstance) {
 
   app.post('/sessions', authenticate)
 
+  app.patch('/token/refresh', refresh)
   /** Authenticated */
   app.get('/me', { onRequest: [verifyJwt] }, profile)
 }
