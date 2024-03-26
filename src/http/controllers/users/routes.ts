@@ -1,8 +1,8 @@
 import { FastifyInstance } from 'fastify'
-import { register } from './controllers/register'
-import { authenticate } from './controllers/authenticate'
-import { profile } from './controllers/profile'
-import { verifyJwt } from './controllers/middlewares/verify-jwt'
+import { register } from './register'
+import { authenticate } from './authenticate'
+import { verifyJwt } from '@/http/middlewares/verify-jwt'
+import { profile } from './profile'
 
 /*
 Traduzir a rota sempre para entidades, oque isso quer dizer:
@@ -10,7 +10,7 @@ Invés de fazer um post auth, que significa estou criando um auth
 Mudar para sessions pois fica com: "Estou criando uma sessão"
 
 */
-export async function appRoutes(app: FastifyInstance) {
+export async function usersRoutes(app: FastifyInstance) {
   app.post('/users', register)
 
   app.post('/sessions', authenticate)
